@@ -27,6 +27,10 @@ public class Scrollable {
             isScrolledLeft = true;
         }
     }
+    
+    public void stop() {
+        velocity.x = 0;
+    }
 
     // Reset: Should Override in subclass for more specific behavior.
     public void reset(float newX) {
