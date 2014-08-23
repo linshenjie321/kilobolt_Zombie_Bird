@@ -1,5 +1,6 @@
 package com.kilobolt.gameobjects;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
 
 public class Bird {
@@ -23,15 +24,17 @@ public class Bird {
 	public void update(float delta) {
 		velocity.add(acceleration.cpy().scl(delta));
 		
-		if(velocity.y > 200){
-			velocity.y = 200;
+		if(velocity.y > 10){
+			Gdx.app.log("velocity", Float.toString(velocity.y));
+			velocity.y = 10;
 		}
 		
 		position.add(acceleration.cpy().scl(delta));
 	}
 	
 	public void onClick(){
-		velocity.y = -140;
+		Gdx.app.log("velocity", Float.toString(velocity.y));
+		velocity.y =-140;
 	}
 	
 	public float getX(){
