@@ -24,12 +24,12 @@ public class Bird {
 	public void update(float delta) {
 		velocity.add(acceleration.cpy().scl(delta));
 		
-		if(velocity.y > 10){
+		if(velocity.y > 200){
 			Gdx.app.log("velocity", Float.toString(velocity.y));
-			velocity.y = 10;
+			velocity.y = 200;
 		}
 		
-		position.add(acceleration.cpy().scl(delta));
+		position.add(velocity.cpy().scl(delta));
 	}
 	
 	public void onClick(){
